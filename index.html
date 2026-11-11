@@ -127,7 +127,7 @@ This site is not affiliated with or endorsed by Meta Platforms, Inc.
 <script>
 function goCheckout(e){
   e.preventDefault();
-  if(!CHECKOUT_URL || CHECKOUT_URL==='https://selar.com/of7371964n'){alert('Replace https://selar.com/of7371964n in the page source with your real checkout URL before publishing.');return;}
+  if(!CHECKOUT_URL){alert('Checkout link is missing.');return;}
   if(typeof fbq==='function' && META_PIXEL_ID!=='YOUR_META_PIXEL_ID'){fbq('track','InitiateCheckout',{content_name:'The First Three Years',content_type:'product',...(BOOK_PRICE!==null?{value:BOOK_PRICE,currency:BOOK_CURRENCY}:{})});}
   setTimeout(()=>location.href=CHECKOUT_URL,220);
 }
